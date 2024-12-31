@@ -1,0 +1,56 @@
+-- Wait for game to load
+
+repeat task.wait() until game:IsLoaded()
+
+-- Send notification
+
+local PROGRESS_DURATION = 4
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "NotificationGui"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.ResetOnSpawn = false
+local DetectionFrame = Instance.new("Frame")
+local DetectionText = Instance.new("TextLabel")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local UISizeConstraint = Instance.new("UISizeConstraint")
+DetectionFrame.Name = "DetectionFrame"
+DetectionFrame.Parent = screenGui
+DetectionFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+DetectionFrame.BackgroundColor3 = Color3.fromRGB(19, 20, 21)
+DetectionFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DetectionFrame.BorderSizePixel = 0
+DetectionFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+DetectionFrame.Size = UDim2.new(0.170000006, 0, 0.090000001, 0)
+DetectionText.Name = "DetectionText"
+DetectionText.Parent = DetectionFrame
+DetectionText.AnchorPoint = Vector2.new(0.5, 0.5)
+DetectionText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DetectionText.BackgroundTransparency = 1.000
+DetectionText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DetectionText.BorderSizePixel = 0
+DetectionText.Position = UDim2.new(0.5, 0, 0.5, 0)
+DetectionText.Size = UDim2.new(0.899999976, 0, 0.899999976, 0)
+DetectionText.Font = Enum.Font.TitilliumWeb
+DetectionText.RichText = true
+DetectionText.Text = "<b>Detecting Game...</b>"
+DetectionText.TextColor3 = Color3.fromRGB(197, 198, 198)
+DetectionText.TextScaled = true
+DetectionText.TextWrapped = true
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = DetectionFrame
+UISizeConstraint.Parent = DetectionFrame
+UISizeConstraint.MaxSize = Vector2.new(147, 45)
+UISizeConstraint.MinSize = Vector2.new(147, 45)
+for i = 0, PROGRESS_DURATION, 0.6 do
+	local progress = i / PROGRESS_DURATION
+	DetectionText.Text = "Detecting Game."
+	wait(0.2)
+	DetectionText.Text = "Detecting Game.."
+	wait(0.2)
+	DetectionText.Text = "Detecting Game..."
+	wait(0.2)
+end
+wait(0.2)
+DetectionFrame.Visible = false
+DetectionFrame:Destroy()
