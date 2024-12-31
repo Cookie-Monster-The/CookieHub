@@ -2,6 +2,14 @@
 
 repeat task.wait() until game:IsLoaded()
 
+-- Game Ids
+
+MM2Id = 142823291 -- Murder Mystery 2
+SmSId = 96462622512177 -- Supermarket Simulator
+ArId = 286090429 -- Arsenal
+JbId = 606849621 -- Jailbreak
+
+
 -- Send notification
 
 local PROGRESS_DURATION = 4
@@ -54,3 +62,13 @@ end
 wait(0.2)
 DetectionFrame.Visible = false
 DetectionFrame:Destroy()
+
+-- Detect Current Game
+
+if game.GameId == ArId then -- Arsenal
+		-- Run scripts for Arsenal
+elseif game.GameId == SmSId then -- Supermarket Simulator
+		-- Run scripts for Supermarket Simulator
+else
+		-- Error: Game not supported
+end
