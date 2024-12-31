@@ -4,10 +4,9 @@ repeat task.wait() until game:IsLoaded()
 
 -- Send notification
 
-local TITLE_COLOR = Color3.fromRGB(255, 255, 255)
-local BG_COLOR_START = Color3.fromRGB(150, 152, 158)
-local BG_COLOR_END = Color3.fromRGB(150, 152, 158)
-local PROGRESS_BAR_COLOR = Color3.fromRGB(56, 59, 57)
+local TITLE_COLOR = Color3.fromRGB(40, 41, 41)
+local BG_COLOR = Color3.fromRGB(69, 69, 72)
+local PROGRESS_BAR_COLOR = Color3.fromRGB(45, 47, 45)
 local NOTIFICATION_WIDTH = 150
 local NOTIFICATION_HEIGHT = 40
 local PROGRESS_BAR_HEIGHT = 10
@@ -23,15 +22,9 @@ notificationFrame.Size = UDim2.new(0, NOTIFICATION_WIDTH, 0, NOTIFICATION_HEIGHT
 notificationFrame.Position = UDim2.new(1, -NOTIFICATION_WIDTH - 10, 1, POSITION_Y)
 notificationFrame.BackgroundTransparency = 0
 notificationFrame.BorderSizePixel = 0
-notificationFrame.BackgroundColor3 = BG_COLOR_START
+notificationFrame.BackgroundColor3 = BG_COLOR
 notificationFrame.Parent = screenGui
-local notificationGradient = Instance.new("UIGradient")
-notificationGradient.Color = ColorSequence.new({
-	ColorSequenceKeypoint.new(0, BG_COLOR_START),
-	ColorSequenceKeypoint.new(1, BG_COLOR_END)
-})
-notificationGradient.Rotation = 45
-notificationGradient.Parent = notificationFrame
+notificationFrame.ZIndex = 20
 local notificationCorner = Instance.new("UICorner")
 notificationCorner.CornerRadius = UDim.new(0, 10)
 notificationCorner.Parent = notificationFrame
@@ -43,21 +36,16 @@ titleLabel.Text = "Detecting Game..."
 titleLabel.TextSize = 12
 titleLabel.TextColor3 = TITLE_COLOR
 titleLabel.TextWrapped = true
-titleLabel.TextStrokeTransparency = 0.6
+titleLabel.TextStrokeTransparency = 0.8
 titleLabel.Parent = notificationFrame
-local titleGradient = Instance.new("UIGradient")
-titleGradient.Color = ColorSequence.new({
-	ColorSequenceKeypoint.new(0, BG_COLOR_START),
-	ColorSequenceKeypoint.new(1, BG_COLOR_END)
-})
-titleGradient.Rotation = 45
-titleGradient.Parent = titleLabel
+titleLabel.ZIndex = 21
 local progressSection = Instance.new("Frame")
 progressSection.Size = UDim2.new(0.95, 0, 0, PROGRESS_BAR_HEIGHT)
 progressSection.Position = UDim2.new(0.025, 0, 0.92, -10)
 progressSection.BackgroundTransparency = 0
-progressSection.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+progressSection.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 progressSection.BorderSizePixel = 0
+progressSection.ZIndex = 21
 progressSection.Parent = notificationFrame
 local progressSectionCorner = Instance.new("UICorner")
 progressSectionCorner.CornerRadius = UDim.new(0, 5)
@@ -66,6 +54,7 @@ local progressBar = Instance.new("Frame")
 progressBar.Size = UDim2.new(0, 0, 1, 0)
 progressBar.BackgroundColor3 = PROGRESS_BAR_COLOR
 progressBar.BorderSizePixel = 0
+progressBar.ZIndex = 22
 progressBar.Parent = progressSection
 local progressCorner = Instance.new("UICorner")
 progressCorner.CornerRadius = UDim.new(0, 8)
@@ -78,5 +67,3 @@ end
 wait(0.2)
 notificationFrame.Visible = false
 notificationFrame:Destroy()
-
-
