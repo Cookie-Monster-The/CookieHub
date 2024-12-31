@@ -1,0 +1,17 @@
+# **[Cookie Hub](https://github.com/Cookie-Monster-The/CookieHub)**
+
+Script:
+```
+-- Cookie Hub
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/ScriptLoader.Lua'))()
+
+-- Credits to @Cookie-Monster-The
+```
+
+
+## **Features**
+
+- Keyless
+- Opensource
+- S.R.E. (Safe, Reliable & Efficient)
