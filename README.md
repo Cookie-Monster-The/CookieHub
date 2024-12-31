@@ -4,7 +4,7 @@ Script:
 ```
 -- Cookie Hub
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/ScriptLoader.Lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/ScriptLoader/ScriptLoader.Lua'))()
 
 -- Credits to @Cookie-Monster-The
 ```
