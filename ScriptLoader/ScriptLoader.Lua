@@ -66,9 +66,17 @@ DetectionFrame:Destroy()
 -- Detect Current Game
 
 if game.GameId == ArId then -- Arsenal
-		-- Run scripts for Arsenal
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Arsenal.Lua'))()
+
 elseif game.GameId == SmSId then -- Supermarket Simulator
-		-- Run scripts for Supermarket Simulator
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Supermarket_Simulator.Lua'))()
+
+elseif game.GameId == JbId then -- Jailbreak
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Jailbreak.Lua'))()
+	
+elseif game.GameId == MM2Id then -- Murder Mystery 2
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Murder_Mystery_2.Lua'))()
+	
 else
 		-- Error: Game not supported
 end
