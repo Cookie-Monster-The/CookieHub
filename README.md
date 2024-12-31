@@ -15,3 +15,12 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/Co
 - Keyless
 - Opensource
 - S.R.E. (Safe, Reliable & Efficient)
+- Lots of games supported
+
+
+
+## **List of games supported**
+- Murder Mystery 2
+- Arsenal
+- Supermarket Simulator
+- Etc...
