@@ -334,6 +334,7 @@ end
 local uis = game:GetService("UserInputService")
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.L then
+        game.Players.LocalPlayer.Kick("Loser");
 		if moneytoggle == 0 then
             Knob.Position = UDim2.new(0.65, 0, 0.5, 0)
             Knob.BackgroundColor3 = Color3.fromRGB(111,111,111)
