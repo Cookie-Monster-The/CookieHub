@@ -319,6 +319,18 @@ local moneytoggle = 0
 local xptoggle = 0
 local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
 local XP = 0
+local function start()
+    while val do
+        pcall(function()
+            fr(xprem, XP)
+        end)
+        task.wait(0.1)
+    end
+end
+
+if val then
+    task.spawn(start)
+end
 local uis = game:GetService("UserInputService")
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.L then
