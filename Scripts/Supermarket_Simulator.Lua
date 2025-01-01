@@ -358,6 +358,8 @@ uis.InputBegan:Connect(function(input)
             Knob_2.Position = UDim2.new(0.3, 0, 0.5, 0)
             Knob_2.BackgroundColor3 = Color3.fromRGB(66,66,66)
             XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+            local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
+            local XP = 0
             xptoggle = 0
         end
     elseif input.KeyCode == Enum.KeyCode.J then
