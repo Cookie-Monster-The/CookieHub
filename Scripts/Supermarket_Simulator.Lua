@@ -1,3 +1,5 @@
+local rs = game:GetService("ReplicatedStorage")
+local eve = rs:WaitForChild("Events")
 local function protect_gui(obj) 
     if destroyed then
        obj.Parent = game.CoreGui
@@ -50,8 +52,6 @@ local UIScale_4 = Instance.new("UIScale")
 local ClickDetector_3 = Instance.new("TextButton")
 local AllGamepasses = Instance.new("TextLabel")
 local Credits = Instance.new("TextLabel")
-local rs = game:GetService("ReplicatedStorage")
-local eve = rs:WaitForChild("Events")
 local function ir(rempath, ...)
     local remote = rempath:InvokeServer(...)
     return remote
