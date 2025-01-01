@@ -11,7 +11,7 @@ local function protect_gui(obj)
     else
     obj.Parent = game.CoreGui
     end
-    end
+end
 local CookieHub = Instance.new("ScreenGui")
 protect_gui(CookieHub)
 local SuperMarketFrame = Instance.new("Frame")
