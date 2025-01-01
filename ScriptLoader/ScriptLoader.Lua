@@ -11,21 +11,6 @@ JbId = 606849621 -- Jailbreak
 
 
 -- Send notification
-local function protect_gui(obj) 
-    if destroyed then
-       obj.Parent = game.CoreGui
-       return
-    end
-    if syn and syn.protect_gui then
-    syn.protect_gui(obj)
-    obj.Parent = game.CoreGui
-    elseif PROTOSMASHER_LOADED then
-    obj.Parent = get_hidden_gui()
-    else
-    obj.Parent = game.CoreGui
-    end
-    end
-
 local PROGRESS_DURATION = 4
 local screenGui = Instance.new("ScreenGui")
 protect_gui(screenGui)
@@ -82,8 +67,23 @@ end
 wait(0.2)
 DetectionFrame.Visible = false
 DetectionFrame:Destroy()
+local function protect_gui(obj) 
+    if destroyed then
+       obj.Parent = game.CoreGui
+       return
+    end
+    if syn and syn.protect_gui then
+		syn.protect_gui(obj)
+    	obj.Parent = game.CoreGui
+    elseif PROTOSMASHER_LOADED then
+    	obj.Parent = get_hidden_gui()
+    else
+    	obj.Parent = game.CoreGui
+    end
+end
 
 -- Detect Current Game
+
 local currentid = game.PlaceId
 
 if currentid == ArId then -- Arsenal

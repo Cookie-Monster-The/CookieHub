@@ -384,3 +384,15 @@ ClickDetector_3.MouseButton1Click:Connect(function()
 		gamepasstoggle = 0
 	end
 end)
+local uis = game:GetService("UserInputService")
+local player = game.Players.LocalPlayer
+uis.InputBegan:Connect(function(input)
+	if (uis:GetFocusedTextBox()) then
+		return; -- make sure player's not chatting!
+	end
+	if input.KeyCode == Enum.KeyCode.F then
+		player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
+	end	
+
+end)
