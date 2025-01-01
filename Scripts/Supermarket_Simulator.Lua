@@ -35,6 +35,17 @@ local UIScale_4 = Instance.new("UIScale")
 local ClickDetector_3 = Instance.new("TextButton")
 local AllGamepasses = Instance.new("TextLabel")
 local Credits = Instance.new("TextLabel")
+local rs = game:GetService("ReplicatedStorage")
+local eve = rs:WaitForChild("Events")
+
+local function ir(rempath, ...)
+    local remote = rempath:InvokeServer(...)
+    return remote
+end
+
+local function fr(rempath, ...)
+    rempath:FireServer(...)
+end
 CookieHub.Name = "CookieHub"
 CookieHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 SuperMarketFrame.Name = "SuperMarketFrame"
