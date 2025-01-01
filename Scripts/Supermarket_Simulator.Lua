@@ -312,6 +312,7 @@ Credits.TextScaled = true
 Credits.TextSize = 14.000
 Credits.TextStrokeColor3 = Color3.fromRGB(43, 43, 43)
 Credits.TextWrapped = true
+local player = game.Players.LocalPlayer
 
 local gamepasstoggle = 0
 local moneytoggle = 0
@@ -323,11 +324,15 @@ ClickDetector.MouseButton1Click:Connect(function()
 		Toggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
         local goldrem = eve:WaitForChild("Gold"):WaitForChild("ChangeGoldRF")
         ir(goldrem, "ChangeGold", math.huge, false)
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		moneytoggle = 1
 	else
 		Knob.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		Toggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		moneytoggle = 0
 	end
 end)
@@ -351,11 +356,15 @@ ClickDetector_2.MouseButton1Click:Connect(function()
         if val then
             task.spawn(start)
         end
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		xptoggle = 1
 	else
 		Knob_2.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob_2.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		xptoggle = 0
 	end
 end)
@@ -376,16 +385,20 @@ ClickDetector_3.MouseButton1Click:Connect(function()
         for _, args in ipairs(gamepasses) do
         fr(gprem, unpack(args))
         end
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		gamepasstoggle = 1
 	else
 		Knob_3.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob_3.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		GPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+        player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
 		gamepasstoggle = 0
+        
 	end
 end)
 local uis = game:GetService("UserInputService")
-local player = game.Players.LocalPlayer
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.F then
 		player.CameraMode = "Classic"
