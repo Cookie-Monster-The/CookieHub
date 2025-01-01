@@ -317,6 +317,8 @@ local player = game.Players.LocalPlayer
 local gamepasstoggle = 0
 local moneytoggle = 0
 local xptoggle = 0
+local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
+local XP = 0
 local uis = game:GetService("UserInputService")
 uis.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.L then
