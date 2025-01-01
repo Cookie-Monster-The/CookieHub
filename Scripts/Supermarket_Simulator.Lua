@@ -360,6 +360,18 @@ uis.InputBegan:Connect(function(input)
             XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
             local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
             local XP = 0
+            local function start()
+                while val do
+                    pcall(function()
+                        fr(xprem, XP)
+                    end)
+                    task.wait(0.1)
+                end
+            end
+        
+            if val then
+                task.spawn(start)
+            end
             xptoggle = 0
         end
     elseif input.KeyCode == Enum.KeyCode.J then
