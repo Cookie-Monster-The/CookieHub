@@ -84,17 +84,18 @@ DetectionFrame.Visible = false
 DetectionFrame:Destroy()
 
 -- Detect Current Game
+local currentid = game.PlaceId
 
-if game.GameId == ArId then -- Arsenal
+if currentid == ArId then -- Arsenal
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Arsenal.Lua'))()
 
-elseif game.GameId == SmSId then -- Supermarket Simulator
+elseif currentid == SmSId then -- Supermarket Simulator
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Supermarket_Simulator.Lua'))()
 
-elseif game.GameId == JbId then -- Jailbreak
+elseif currentid == JbId then -- Jailbreak
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Jailbreak.Lua'))()
 	
-elseif game.GameId == MM2Id then -- Murder Mystery 2
+elseif currentid == MM2Id then -- Murder Mystery 2
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/Cookie-Monster-The/CookieHub/main/Scripts/Murder_Mystery_2.Lua'))()
 	
 else
