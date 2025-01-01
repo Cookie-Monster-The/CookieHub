@@ -1,4 +1,19 @@
+local function protect_gui(obj) 
+    if destroyed then
+       obj.Parent = game.CoreGui
+       return
+    end
+    if syn and syn.protect_gui then
+    syn.protect_gui(obj)
+    obj.Parent = game.CoreGui
+    elseif PROTOSMASHER_LOADED then
+    obj.Parent = get_hidden_gui()
+    else
+    obj.Parent = game.CoreGui
+    end
+    end
 local CookieHub = Instance.new("ScreenGui")
+protect_gui(CookieHub)
 local SuperMarketFrame = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
@@ -37,7 +52,6 @@ local AllGamepasses = Instance.new("TextLabel")
 local Credits = Instance.new("TextLabel")
 local rs = game:GetService("ReplicatedStorage")
 local eve = rs:WaitForChild("Events")
-
 local function ir(rempath, ...)
     local remote = rempath:InvokeServer(...)
     return remote
