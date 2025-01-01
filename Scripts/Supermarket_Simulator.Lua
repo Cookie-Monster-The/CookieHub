@@ -339,7 +339,7 @@ uis.InputBegan:Connect(function(input)
             Knob_2.BackgroundColor3 = Color3.fromRGB(111,111,111)
             XPToggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
             local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
-            local XP = 10000000
+            local XP = 100000000
         
             local function start()
                 while val do
