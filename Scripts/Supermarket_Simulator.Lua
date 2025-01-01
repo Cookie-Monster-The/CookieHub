@@ -173,7 +173,7 @@ InfMoney.Position = UDim2.new(0.33, 0, 0.296, 0)
 InfMoney.Size = UDim2.new(0.35, 0, 0.11, 0)
 InfMoney.Font = Enum.Font.TitilliumWeb
 InfMoney.RichText = true
-InfMoney.Text = "<b>Infinite Money</b>"
+InfMoney.Text = "<b>Infinite Money (L)</b>"
 InfMoney.TextColor3 = Color3.fromRGB(26, 26, 26)
 InfMoney.TextScaled = true
 InfMoney.TextSize = 14.000
@@ -231,7 +231,7 @@ InfXP.Position = UDim2.new(0.284, 0, 0.546, 0)
 InfXP.Size = UDim2.new(0.35, 0, 0.11, 0)
 InfXP.Font = Enum.Font.TitilliumWeb
 InfXP.RichText = true
-InfXP.Text = "<b>Infinite xp</b>"
+InfXP.Text = "<b>Infinite xp (K)</b>"
 InfXP.TextColor3 = Color3.fromRGB(26, 26, 26)
 InfXP.TextScaled = true
 InfXP.TextSize = 14.000
@@ -289,7 +289,7 @@ AllGamepasses.Position = UDim2.new(0.37, 0, 0.8, 0)
 AllGamepasses.Size = UDim2.new(0.42, 0, 0.11, 0)
 AllGamepasses.Font = Enum.Font.TitilliumWeb
 AllGamepasses.RichText = true
-AllGamepasses.Text = "<b>Get All Gamepasses</b>"
+AllGamepasses.Text = "<b>Get All Gamepasses (J)</b>"
 AllGamepasses.TextColor3 = Color3.fromRGB(26, 26, 26)
 AllGamepasses.TextScaled = true
 AllGamepasses.TextSize = 14.000
@@ -326,15 +326,11 @@ uis.InputBegan:Connect(function(input)
             Toggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
             local goldrem = eve:WaitForChild("Gold"):WaitForChild("ChangeGoldRF")
             ir(goldrem, "ChangeGold", math.huge, false)
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             moneytoggle = 1
         else
             Knob.Position = UDim2.new(0.3, 0, 0.5, 0)
             Knob.BackgroundColor3 = Color3.fromRGB(66,66,66)
             Toggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             moneytoggle = 0
         end
     elseif input.KeyCode == Enum.KeyCode.K then
@@ -357,15 +353,11 @@ uis.InputBegan:Connect(function(input)
             if val then
                 task.spawn(start)
             end
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             xptoggle = 1
         else
             Knob_2.Position = UDim2.new(0.3, 0, 0.5, 0)
             Knob_2.BackgroundColor3 = Color3.fromRGB(66,66,66)
             XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             xptoggle = 0
         end
     elseif input.KeyCode == Enum.KeyCode.J then
@@ -385,15 +377,11 @@ uis.InputBegan:Connect(function(input)
             for _, args in ipairs(gamepasses) do
             fr(gprem, unpack(args))
             end
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             gamepasstoggle = 1
         else
             Knob_3.Position = UDim2.new(0.3, 0, 0.5, 0)
             Knob_3.BackgroundColor3 = Color3.fromRGB(66,66,66)
             GPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-            player.CameraMode = "Classic"
-            player.CameraMinZoomDistance = 3
             gamepasstoggle = 0
             
         end
@@ -407,15 +395,11 @@ ClickDetector.MouseButton1Click:Connect(function()
 		Toggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
         local goldrem = eve:WaitForChild("Gold"):WaitForChild("ChangeGoldRF")
         ir(goldrem, "ChangeGold", math.huge, false)
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		moneytoggle = 1
 	else
 		Knob.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		Toggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		moneytoggle = 0
 	end
 end)
@@ -439,15 +423,11 @@ ClickDetector_2.MouseButton1Click:Connect(function()
         if val then
             task.spawn(start)
         end
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		xptoggle = 1
 	else
 		Knob_2.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob_2.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		xptoggle = 0
 	end
 end)
@@ -468,15 +448,11 @@ ClickDetector_3.MouseButton1Click:Connect(function()
         for _, args in ipairs(gamepasses) do
         fr(gprem, unpack(args))
         end
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		gamepasstoggle = 1
 	else
 		Knob_3.Position = UDim2.new(0.3, 0, 0.5, 0)
 		Knob_3.BackgroundColor3 = Color3.fromRGB(66,66,66)
 		GPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
-        player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
 		gamepasstoggle = 0
         
 	end
