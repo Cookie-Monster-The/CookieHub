@@ -317,6 +317,14 @@ local player = game.Players.LocalPlayer
 local gamepasstoggle = 0
 local moneytoggle = 0
 local xptoggle = 0
+local uis = game:GetService("UserInputService")
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.F then
+		player.CameraMode = "Classic"
+		player.CameraMinZoomDistance = 3
+	end	
+
+end)
 ClickDetector.MouseButton1Click:Connect(function()
 	if moneytoggle == 0 then
 		Knob.Position = UDim2.new(0.65, 0, 0.5, 0)
@@ -397,12 +405,4 @@ ClickDetector_3.MouseButton1Click:Connect(function()
 		gamepasstoggle = 0
         
 	end
-end)
-local uis = game:GetService("UserInputService")
-uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.F then
-		player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
-	end	
-
 end)
