@@ -319,9 +319,84 @@ local moneytoggle = 0
 local xptoggle = 0
 local uis = game:GetService("UserInputService")
 uis.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.F then
-		player.CameraMode = "Classic"
-		player.CameraMinZoomDistance = 3
+	if input.KeyCode == Enum.KeyCode.L then
+		if moneytoggle == 0 then
+            Knob.Position = UDim2.new(0.65, 0, 0.5, 0)
+            Knob.BackgroundColor3 = Color3.fromRGB(111,111,111)
+            Toggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
+            local goldrem = eve:WaitForChild("Gold"):WaitForChild("ChangeGoldRF")
+            ir(goldrem, "ChangeGold", math.huge, false)
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            moneytoggle = 1
+        else
+            Knob.Position = UDim2.new(0.3, 0, 0.5, 0)
+            Knob.BackgroundColor3 = Color3.fromRGB(66,66,66)
+            Toggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            moneytoggle = 0
+        end
+    elseif input.KeyCode == Enum.KeyCode.K then
+        if xptoggle == 0 then
+            Knob_2.Position = UDim2.new(0.65, 0, 0.5, 0)
+            Knob_2.BackgroundColor3 = Color3.fromRGB(111,111,111)
+            XPToggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
+            local xprem = eve:WaitForChild("Exp"):WaitForChild("ChangeExpRE")
+            local XP = 10000000
+        
+            local function start()
+                while val do
+                    pcall(function()
+                        fr(xprem, XP)
+                    end)
+                    task.wait(0.1)
+                end
+            end
+        
+            if val then
+                task.spawn(start)
+            end
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            xptoggle = 1
+        else
+            Knob_2.Position = UDim2.new(0.3, 0, 0.5, 0)
+            Knob_2.BackgroundColor3 = Color3.fromRGB(66,66,66)
+            XPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            xptoggle = 0
+        end
+    elseif input.KeyCode == Enum.KeyCode.J then
+        if gamepasstoggle == 0 then
+            Knob_3.Position = UDim2.new(0.65, 0, 0.5, 0)
+            Knob_3.BackgroundColor3 = Color3.fromRGB(111,111,111)
+            GPToggle.BackgroundColor3 = Color3.fromRGB(87,87,87)
+            local gprem = eve:WaitForChild("Goods"):WaitForChild("GamePassRE")
+    
+            local gamepasses = {
+            { "Cashier", 28 },
+            { "Quick Check-out", 1 },
+            { "Porter", 5 },
+            { "Quick Pricing" }
+            }
+      
+            for _, args in ipairs(gamepasses) do
+            fr(gprem, unpack(args))
+            end
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            gamepasstoggle = 1
+        else
+            Knob_3.Position = UDim2.new(0.3, 0, 0.5, 0)
+            Knob_3.BackgroundColor3 = Color3.fromRGB(66,66,66)
+            GPToggle.BackgroundColor3 = Color3.fromRGB(47,47,47)
+            player.CameraMode = "Classic"
+            player.CameraMinZoomDistance = 3
+            gamepasstoggle = 0
+            
+        end
 	end	
 
 end)
